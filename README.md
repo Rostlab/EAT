@@ -7,7 +7,7 @@ Here, we present a novel approach that expands the concept of homology-based inf
 
 
 # Figures
-<img src="https://github.com/Rostlab/EAT/blob/main/ProtTucker_tSNE.png?raw=true" width="100" height="100">
+<img src="https://github.com/Rostlab/EAT/blob/main/ProtTucker_tSNE.png?raw=true" width="30%" height="30%">
 
 ![t-SNE projections of high-dimensional embeddings](https://github.com/Rostlab/EAT/blob/main/ProtTucker_tSNE.png?raw=true){:height="30%" width="30%"}
 Contrastive learning improved CATH class-level clustering. Using t-SNE, we projected the high-dimensional embedding space onto 2D before (left) and after (right) contrastive learning. The colors mark the major class level of CATH (C) distinguishing proteins according to their major distinction in secondary structure content.
