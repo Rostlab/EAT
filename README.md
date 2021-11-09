@@ -18,7 +18,7 @@ If one is interested in structural similarity/fold recognition, we recommend to 
 <img src="https://github.com/Rostlab/EAT/blob/main/ProtTucker_tSNE.png?raw=true" width="60%" height="60%">
 Contrastive learning improved CATH class-level clustering. Using t-SNE, we projected the high-dimensional embedding space onto 2D before (left) and after (right) contrastive learning. The colors mark the major class level of CATH (C) distinguishing proteins according to their major distinction in secondary structure content.
 
-
+<br/><br/>
 
 
 <img src="https://github.com/Rostlab/EAT/blob/main/ProtTucker_reliability.png?raw=true" width="50%" height="50%">
