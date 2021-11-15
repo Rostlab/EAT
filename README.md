@@ -33,6 +33,7 @@ python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries 
 Example output is given here: https://github.com/Rostlab/EAT/blob/main/data/example_data_subcell/example_output_protT5_NN3.txt
 
 - Expert solution tailored for remote homology detection:
+
 For remote homology detection, we recommend to use ProtTucker(ProtT5) embeddings that were specialized on capturing the CATH hierarchy:
 
 ```sh
