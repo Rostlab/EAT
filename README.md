@@ -5,13 +5,30 @@ Embedding-based annotation transfer (EAT) uses Euclidean distance between vector
 # Abstract 
 Here, we present a novel approach that expands the concept of homology-based inference (HBI) from a low-dimensional sequence-distance lookup to the level of a high-dimensional embedding-based annotation transfer (EAT). More specifically, we replace sequence similarity as means to transfer annotations from one set of proteins (lookup; usually labeled) to another set of proteins (queries; usually unlabeled) by Euclidean distance between single protein sequence representations (embeddings) from protein Language Models (pLMs). Secondly, we introduce a novel set of embeddings (dubbed ProtTucker) that were optimized towards constraints captured by hierarchical classifications of protein 3D structures (CATH). These new embeddings enabled the intrusion into the midnight zone of protein comparisons, i.e., the region in which the level of pairwise sequence similarity is akin of random relations and therefore is hard to navigate by HBI methods. Cautious benchmarking showed that ProtTucker reached further than advanced sequence comparisons without the need to compute alignments allowing it to be orders of magnitude faster.
 
+# Getting started
+Install bio_embeddings package as described here: https://github.com/sacdallago/bio_embeddings
+Clone the EAT repository and get started as described in the Usage section below:
+   ```sh
+   git clone https://github.com/Rostlab/EAT.git
+   ```
 
 # Usage
-For general annotation transfer/nearest-neighbor search in embedding space, the pLM ProtT5 is used. It was only optimized using raw protein sequences (self-supervised pre-training) and is therefor not biased towards a certain task.
+For general annotation transfer/nearest-neighbor search in embedding space, the pLM ProtT5 is used. It was only optimized using raw protein sequences (self-supervised pre-training) and is therefor not biased towards a certain task. Transferring annotations from lookup to queries (using fasta headers as labels):
 
+```sh
+python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries data/example_data/la_query_setHARD.fasta --output eat_results/
+```
+If you want to provide your labels as separate file (labels are expected to have CSV format with 1st col being the fasta header and 2nd col being the label):
 
-If one is interested in structural similarity/fold recognition, we recommend to use our proposed ProtTucker embeddings.
+```sh
+python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries data/example_data/la_query_setHARD.fasta --output eat_results/ --lookupLabels data/example_data_subcell/deeploc_lookup_labels.txt --queryLabels data/example_data_subcell/la_query_setHARD_labels.txt
+```
 
+For remote homology detection, we recommend to use ProtTucker(ProtT5) embeddings that were specialized on capturing the CATH hierarchy:
+
+```sh
+python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries data/example_data/la_query_setHARD.fasta --output eat_results/ --use_tucker 1
+```
 
 
 # Figures
