@@ -32,6 +32,8 @@ For remote homology detection, we recommend to use ProtTucker(ProtT5) embeddings
 python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries data/example_data/la_query_setHARD.fasta --output eat_results/ --use_tucker 1
 ```
 
+Example output is given here: https://github.com/Rostlab/EAT/blob/main/data/example_data_subcell/example_output_protT5_NN3.txt
+
 
 # Figures
 <img src="https://github.com/Rostlab/EAT/blob/main/ProtTucker_tSNE.png?raw=true" width="60%" height="60%">
