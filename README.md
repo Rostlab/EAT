@@ -16,7 +16,7 @@ Clone the EAT repository and get started as described in the Usage section below
 
 # Usage
 - Quick start: General purpose (1 nearest neighbor/1-NN) without additional labels files:
-For general annotation transfer/nearest-neighbor search in embedding space, the pLM ProtT5 is used. It was only optimized using raw protein sequences (self-supervised pre-training) and is therefor not biased towards a certain task. Transferring annotations from lookup to queries (using fasta headers as labels):
+For general annotation transfer/nearest-neighbor search in embedding space, the pLM ProtT5 is used. It was only optimized using raw protein sequences (self-supervised pre-training) and is therefor not biased towards a certain task. The following command will take two FASTA files holding protein sequences as input (lookup & queries) in order to transfer annotations (fasta headers) from lookup to queries:
 
 ```sh
 python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries data/example_data/la_query_setHARD.fasta --output eat_results/
