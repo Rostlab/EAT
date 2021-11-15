@@ -23,6 +23,7 @@ For general annotation transfer/nearest-neighbor search in embedding space, the 
 python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries data/example_data/la_query_setHARD.fasta --output eat_results/
 ```
 - Extended: General purpose (3-NN) with additional labels:
+
 If you want to provide your labels as separate file (labels are expected to have CSV format with 1st col being the fasta header and 2nd col being the label) and retrieve the first 3 nearest-neighbors (NN) instead of only the single NN:
 
 
