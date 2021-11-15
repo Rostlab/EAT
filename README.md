@@ -41,16 +41,5 @@ python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries 
 ```
 
 
-# Figures
-<img src="https://github.com/Rostlab/EAT/blob/main/ProtTucker_tSNE.png?raw=true" width="60%" height="60%">
-Contrastive learning improved CATH class-level clustering. Using t-SNE, we projected the high-dimensional embedding space onto 2D before (left; ProtT5) and after (right, ProtTucker(ProtT5)) contrastive learning. The colors mark the major class level of CATH (C) distinguishing proteins according to their major distinction in secondary structure content.
-
-<br/><br/>
-
-
-<img src="https://github.com/Rostlab/EAT/blob/main/ProtTucker_reliability.png?raw=true" width="50%" height="50%">
-Similar to varying E-value cut-offs for homology-based inference (HBI), we examined whether the fraction of correct predictions (accuracy; left axis) depended on embedding distance (x-axis) for EAT. Toward this end, we transferred annotations for all four levels of CATH (Class: blue; Architecture: orange; Topology: green; Homologous superfamily: red) from proteins in our lookup set to the queries in our test set using the hit with smallest Euclidean distance. The fraction of test proteins having a hit below a certain distance threshold (coverage, right axis, dashed lines) was evaluated separately for each CATH level. For example, at a Euclidean distance of 1.1 (marked by black vertical dots), 78% of the test proteins found a hit at the H-level (Cov(H)=78%) and of 89% were correctly predicted (Acc(H)=89%). Similar to decreasing E-values for HBI, decreasing embedding distance correlated with EAT performance. This correlation importantly enables users to select only the, e.g., 10% top hits, or all hits with an accuracy above a certain threshold.
-
-
 # Reference
 tbd
