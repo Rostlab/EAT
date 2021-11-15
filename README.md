@@ -7,6 +7,8 @@ Here, we present a novel approach that expands the concept of homology-based inf
 
 # Getting started
 Install bio_embeddings package as described here: https://github.com/sacdallago/bio_embeddings
+
+
 Clone the EAT repository and get started as described in the Usage section below:
    ```sh
    git clone https://github.com/Rostlab/EAT.git
