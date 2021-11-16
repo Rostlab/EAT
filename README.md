@@ -40,6 +40,25 @@ For remote homology detection, we recommend to use ProtTucker(ProtT5) embeddings
 python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries data/example_data/la_query_setHARD.fasta --output eat_results/ --use_tucker 1
 ```
 
+# Pre-computed lookup embeddings
+We have pre-computed embeddings for major databases to simplify your EAT search (release date of DBs: 16.11.2021):
+
+- SwissProt (565k proteins, ): 
+- PDB (668k chains, 1.6GB): [Download PDB embeddings](https://rostlab.org/~deepppi/eat_dbs/pdb_seqres_161121.h5)
+- CATH-S100 v4.3 (122k chains, 286MB): [Download CATH embeddings](https://rostlab.org/~deepppi/eat_dbs/cath_v430_dom_seqs_S100_161121.h5)
+- SCOPe v.2.08 (93k chains, 216MB): [Download SCOPe embeddings](https://rostlab.org/~deepppi/eat_dbs/scope_2.08_S100.h5)
+
+All embeddings listed above were generated using ProtT5-XL-U50 (or in short ProtT5).
+
+The model was run in half-precision mode on a Quadro RTX 8000 with 48GB vRAM.
+
+Proteins longer than 9.1k residues had to be excluded due to OOM-errors (only a handful proteins were affected by this).
+
+Embeddings are stored as H5 files with protein/chain identifiers (either SwissProt-, PDB-, CATH-, or SCOPe-IDs) as keys and 1024-d embeddings as values.
+
+The embeddings can readily be used as input to the lookup file parameter of EAT.
+
+IF you want to detect structural homologs, we recommend running the provided lookup embeddings through ProtTucker(ProtT5) first. This can be done by adding the flag `--use_tucker 1`.
 
 # Reference (Pre-print)
 ```
