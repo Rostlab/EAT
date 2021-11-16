@@ -41,5 +41,12 @@ python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries 
 ```
 
 
-# Reference
-tbd
+# Reference (Pre-print)
+@article {Heinzinger2021.11.14.468528,
+	author = {Heinzinger, Michael and Littmann, Maria and Sillitoe, Ian and Bordin, Nicola and Orengo, Christine and Rost, Burkhard},
+	title = {Contrastive learning on protein embeddings enlightens midnight zone at lightning speed},
+	year = {2021},
+	doi = {10.1101/2021.11.14.468528},
+	URL = {https://www.biorxiv.org/content/early/2021/11/15/2021.11.14.468528},
+	journal = {bioRxiv}
+}
