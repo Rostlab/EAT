@@ -43,12 +43,14 @@ python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries 
 # Pre-computed lookup embeddings
 We have pre-computed embeddings for major databases to simplify your EAT search (release date of DBs: 16.11.2021):
 
-- SwissProt (565k proteins, ): 
+- SwissProt (565k proteins, 1.3GB): [Download SwissProt embeddings](https://rostlab.org/~deepppi/eat_dbs/sprot_161121.h5) 
 - PDB (668k chains, 1.6GB): [Download PDB embeddings](https://rostlab.org/~deepppi/eat_dbs/pdb_seqres_161121.h5)
 - CATH-S100 v4.3 (122k chains, 286MB): [Download CATH embeddings](https://rostlab.org/~deepppi/eat_dbs/cath_v430_dom_seqs_S100_161121.h5)
 - SCOPe v.2.08 (93k chains, 216MB): [Download SCOPe embeddings](https://rostlab.org/~deepppi/eat_dbs/scope_2.08_S100.h5)
 
 All embeddings listed above were generated using ProtT5-XL-U50 (or in short ProtT5).
+
+In a first step, per-residue embeddings (Lx1024 for ProtT5) were computed. Per-protein embeddings were derived by averaging over the per-residue embeddings, resulting in a single 1024-d vector for each protein, irrespective of its length.
 
 The model was run in half-precision mode on a Quadro RTX 8000 with 48GB vRAM.
 
