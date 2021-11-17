@@ -52,8 +52,7 @@ All embeddings listed above were generated using ProtT5-XL-U50 (or in short Prot
 
 In a first step, per-residue embeddings (Lx1024 for ProtT5) were computed. Per-protein embeddings were derived by averaging over the per-residue embeddings, resulting in a single 1024-d vector for each protein, irrespective of its length.
 
-The model was run in half-precision mode on a Quadro RTX 8000 with 48GB vRAM.
-
+The model was run in half-precision mode on a Quadro RTX 8000 with 48GB vRAM. 
 Proteins longer than 9.1k residues had to be excluded due to OOM-errors (only a handful proteins were affected by this).
 
 Embeddings are stored as H5 files with protein/chain identifiers (either SwissProt-, PDB-, CATH-, or SCOPe-IDs) as keys and 1024-d embeddings as values.
