@@ -50,15 +50,14 @@ We have pre-computed embeddings for major databases to simplify your EAT search 
 
 All embeddings listed above were generated using ProtT5-XL-U50 (or in short ProtT5).
 
-In a first step, per-residue embeddings (Lx1024 for ProtT5) were computed. Per-protein embeddings were derived by averaging over the per-residue embeddings, resulting in a single 1024-d vector for each protein, irrespective of its length.
+In a first step, per-residue embeddings (Lx1024 for ProtT5) were computed. 
+Per-protein embeddings were derived by averaging over the per-residue embeddings, resulting in a single 1024-d vector for each protein, irrespective of its length.
+Embeddings are stored as H5 files with protein/chain identifiers (either SwissProt-, PDB-, CATH-, or SCOPe-IDs) as keys and 1024-d embeddings as values.
 
 The model was run in half-precision mode on a Quadro RTX 8000 with 48GB vRAM. 
 Proteins longer than 9.1k residues had to be excluded due to OOM-errors (only a handful proteins were affected by this).
 
-Embeddings are stored as H5 files with protein/chain identifiers (either SwissProt-, PDB-, CATH-, or SCOPe-IDs) as keys and 1024-d embeddings as values.
-
 The embeddings can readily be used as input to the lookup file parameter of EAT.
-
 IF you want to detect structural homologs, we recommend running the provided lookup embeddings through ProtTucker(ProtT5) first. This can be done by adding the flag `--use_tucker 1`.
 
 # Reference (Pre-print)
