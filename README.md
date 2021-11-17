@@ -49,7 +49,6 @@ We have pre-computed embeddings for major databases to simplify your EAT search 
 - SCOPe v.2.08 (93k chains, 216MB): [Download SCOPe embeddings](https://rostlab.org/~deepppi/eat_dbs/scope_2.08_S100.h5)
 
 All embeddings listed above were generated using ProtT5-XL-U50 (or in short ProtT5).
-
 In a first step, per-residue embeddings (Lx1024 for ProtT5) were computed. 
 Per-protein embeddings were derived by averaging over the per-residue embeddings, resulting in a single 1024-d vector for each protein, irrespective of its length.
 Embeddings are stored as H5 files with protein/chain identifiers (either SwissProt-, PDB-, CATH-, or SCOPe-IDs) as keys and 1024-d embeddings as values.
