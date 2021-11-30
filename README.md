@@ -66,10 +66,11 @@ First, clone this repository and install dependencies:
    ```sh
    git clone https://github.com/Rostlab/EAT.git
    ```
-Next, download pre-computed embeddings used in the paper (ProtT5, ProtBERT, ESM-1b, ProSE: 5.5GB in total) to data/ProtTucker and unzip it there:
+Next, download pre-computed embeddings used in the paper (ProtT5, ProtBERT, ESM-1b, ProSE: 5.5GB in total) to data/ProtTucker and unzip them. Also, download CATH annotations used for training.
    ```sh
    wget -P data/ProtTucker/ https://rostlab.org/~deepppi/prottucker_training_embeddings.tar.gz
-   tar -xvf data/ProtTucker/prottucker_training_embeddings.tar.gz -C data/ProtTucker/
+   tar -xvf data/ProtTucker/prottucker_training_embeddings.tar.gz -C data/ProtTucker/ --strip-components 1
+   wget -P data/ProtTucker https://rostlab.org/~deepppi/cath-domain-list.txt
    ```
 Finally, start training by running the training script:
    ```sh
