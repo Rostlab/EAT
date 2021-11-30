@@ -59,6 +59,26 @@ Proteins longer than 9.1k residues had to be excluded due to OOM-errors (only a 
 The embeddings can readily be used as input to the lookup file parameter of EAT.
 IF you want to detect structural homologs, we recommend running the provided lookup embeddings through ProtTucker(ProtT5) first. This can be done by adding the flag `--use_tucker 1`.
 
+
+# Train your own network
+The following steps will allow you to replicate the training of ProtTucker:
+First, clone this repository and install dependencies:
+   ```sh
+   git clone https://github.com/Rostlab/EAT.git
+   ```
+Next, download pre-computed embeddings used in the paper (ProtT5, ProtBERT, ESM-1b, ProSE: 5.5GB in total) to data/ProtTucker and unzip it there:
+   ```sh
+   wget -P data/ProtTucker/ https://rostlab.org/~deepppi/prottucker_training_embeddings.tar.gz
+   tar -xvf data/ProtTucker/prottucker_training_embeddings.tar.gz -C data/ProtTucker/
+   ```
+Finally, start training by running the training script:
+   ```sh
+   python train_prottucker.py
+   ```
+By default, this will train ProtTucker as reported in the paper using embeddings from ProtT5. 
+In order to change the input embeddings, you can either replace the file name for 'embedding_p' OR compute your own embeddings (supported input format: H5).
+
+
 # Reference (Pre-print)
 ```
 @article {Heinzinger2021.11.14.468528,
