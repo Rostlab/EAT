@@ -20,7 +20,7 @@ Clone the EAT repository and get started as described in the Usage section below
 For general annotation transfer/nearest-neighbor search in embedding space, the pLM ProtT5 is used. It was only optimized using raw protein sequences (self-supervised pre-training) and is therefor not biased towards a certain task. The following command will take two FASTA files holding protein sequences as input (lookup & queries) in order to transfer annotations (fasta headers) from lookup to queries:
 
 ```sh
-python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries data/example_data/la_query_setHARD.fasta --output eat_results/
+python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries data/example_data_subcell/la_query_setHARD.fasta --output eat_results/
 ```
 - Extended: General purpose (3-NN) with additional labels:
 
@@ -28,7 +28,7 @@ If you want to provide your labels as separate file (labels are expected to have
 
 
 ```sh
-python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries data/example_data/la_query_setHARD.fasta --output eat_results/ --lookupLabels data/example_data_subcell/deeploc_lookup_labels.txt --queryLabels data/example_data_subcell/la_query_setHARD_labels.txt
+python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries data/example_data_subcell/la_query_setHARD.fasta --output eat_results/ --lookupLabels data/example_data_subcell/deeploc_lookup_labels.txt --queryLabels data/example_data_subcell/la_query_setHARD_labels.txt
 ```
 Example output is given here: [Example output](https://github.com/Rostlab/EAT/blob/main/data/example_data_subcell/example_output_protT5_NN3.txt)
 
@@ -37,7 +37,7 @@ Example output is given here: [Example output](https://github.com/Rostlab/EAT/bl
 For remote homology detection, we recommend to use ProtTucker(ProtT5) embeddings that were specialized on capturing the CATH hierarchy:
 
 ```sh
-python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries data/example_data/la_query_setHARD.fasta --output eat_results/ --use_tucker 1
+python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries data/example_data_subcell/la_query_setHARD.fasta --output eat_results/ --use_tucker 1
 ```
 
 # Pre-computed lookup embeddings
