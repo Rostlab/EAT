@@ -8,8 +8,6 @@ Here, we present a novel approach that expands the concept of homology-based inf
 
 # Getting started
 
-Install bio_embeddings package as described here: https://github.com/sacdallago/bio_embeddings
-
 Clone the EAT repository and get started as described in the Usage section below:
 
 ```sh
@@ -40,17 +38,17 @@ python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries 
 If you want to provide your labels as separate file (labels are expected to have CSV format with 1st col being the fasta header and 2nd col being the label) and retrieve the first 3 nearest-neighbors (NN) instead of only the single NN:
 
 ```sh
-python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries data/example_data_subcell/la_query_setHARD.fasta --output eat_results/ --lookupLabels data/example_data_subcell/deeploc_lookup_labels.txt --queryLabels data/example_data_subcell/la_query_setHARD_labels.txt
+python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries data/example_data_subcell/la_query_setHARD.fasta --output eat_results/ --lookupLabels data/example_data_subcell/deeploc_lookup_labels.txt --queryLabels data/example_data_subcell/la_query_setHARD_labels.txt --num_NN 3
 ```
 
 Example output is given here: [Example output](https://github.com/Rostlab/EAT/blob/main/data/example_data_subcell/example_output_protT5_NN3.txt)
 
 - Expert solution tailored for remote homology detection:
 
-For remote homology detection, we recommend to use ProtTucker(ProtT5) embeddings that were specialized on capturing the CATH hierarchy:
+For remote homology detection, we recommend to use ProtTucker(ProtT5) embeddings that were specialized on capturing the CATH hierarchy. Additionally, we set a maximum Euclidean distance threshold of 1.1, i.e., hits with Euclidean distance larger than 1.1 are not transferred :
 
 ```sh
-python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries data/example_data_subcell/la_query_setHARD.fasta --output eat_results/ --use_tucker 1
+python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries data/example_data_subcell/la_query_setHARD.fasta --output eat_results/ --use_tucker 1 --threshold 1.1
 ```
 
 # Pre-computed lookup embeddings
@@ -99,15 +97,21 @@ python train_prottucker.py
 By default, this will train ProtTucker as reported in the paper using embeddings from ProtT5.
 In order to change the input embeddings, you can either replace the file name for 'embedding_p' OR compute your own embeddings (supported input format: H5).
 
-# Reference (Pre-print)
+# Reference
 
-```
-@article {Heinzinger2021.11.14.468528,
-	author = {Heinzinger, Michael and Littmann, Maria and Sillitoe, Ian and Bordin, Nicola and Orengo, Christine and Rost, Burkhard},
-	title = {Contrastive learning on protein embeddings enlightens midnight zone at lightning speed},
-	year = {2021},
-	doi = {10.1101/2021.11.14.468528},
-	URL = {https://www.biorxiv.org/content/early/2021/11/15/2021.11.14.468528},
-	journal = {bioRxiv}
+```Bibtex
+@article{10.1093/nargab/lqac043,
+    author = {Heinzinger, Michael and Littmann, Maria and Sillitoe, Ian and Bordin, Nicola and Orengo, Christine and Rost, Burkhard},
+    title = "{Contrastive learning on protein embeddings enlightens midnight zone}",
+    journal = {NAR Genomics and Bioinformatics},
+    volume = {4},
+    number = {2},
+    year = {2022},
+    month = {06},
+    issn = {2631-9268},
+    doi = {10.1093/nargab/lqac043},
+    url = {https://doi.org/10.1093/nargab/lqac043},
+    note = {lqac043},
+    eprint = {https://academic.oup.com/nargab/article-pdf/4/2/lqac043/44245898/lqac043.pdf},
 }
 ```
