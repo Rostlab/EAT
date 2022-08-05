@@ -45,10 +45,10 @@ Example output is given here: [Example output](https://github.com/Rostlab/EAT/bl
 
 - Expert solution tailored for remote homology detection:
 
-For remote homology detection, we recommend to use ProtTucker(ProtT5) embeddings that were specialized on capturing the CATH hierarchy. Additionally, we set a maximum Euclidean distance threshold of 1.1, i.e., hits with Euclidean distance larger than 1.1 are not transferred :
+For remote homology detection, we recommend to use ProtTucker(ProtT5) embeddings that were specialized on capturing the CATH hierarchy. Additionally, we set a maximum Euclidean distance threshold of 1, i.e., hits with Euclidean distance larger than 1 are not transferred :
 
 ```sh
-python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries data/example_data_subcell/la_query_setHARD.fasta --output eat_results/ --use_tucker 1 --threshold 1.1
+python eat.py --lookup data/example_data_subcell/deeploc_lookup.fasta --queries data/example_data_subcell/la_query_setHARD.fasta --output eat_results/ --use_tucker 1 --threshold 1
 ```
 
 # Pre-computed lookup embeddings
