@@ -2,4 +2,3 @@ numpy
 torch
 h5py
 sklearn
-bio_embeddings
