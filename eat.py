@@ -464,7 +464,7 @@ def create_arg_parser():
                         help="The number of nearest neighbors to retrieve via EAT." +
                         "Default: 1 (retrieve only THE nearest neighbor).")
     
-    parser.add_argument('--threshold', type=int,
+    parser.add_argument('--threshold', type=float,
                         default=None,
                         help="The Euclidean distance threshold below which nearest neighbors are retrieved via EAT." +
                         "Default: None (retrieve THE nearest neighbor, irrespective of distance).")
