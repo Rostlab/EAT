@@ -2,3 +2,5 @@ h5py==3.6.0
 numpy<=1.22
 scikit-learn==0.24.2
 torch==1.10.0
+transformers==4.17.0
+sentencepiece
