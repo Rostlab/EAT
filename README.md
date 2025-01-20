@@ -1,3 +1,7 @@
+# Update
+Due to ongoing internal server issues all data has been transferred to Zenodo: https://zenodo.org/records/14675997
+In case any of the links below is broken, please retrieve the files from the Zenodo repository.
+
 # EAT
 
 Embedding-based annotation transfer (EAT) uses Euclidean distance between vector representations (embeddings) of proteins to transfer annotations from a set of labeled lookup protein embeddings to query protein embeddings.
